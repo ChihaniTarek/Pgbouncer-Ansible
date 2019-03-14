@@ -1,0 +1,8 @@
+---
+ - name: write the pgbouncer config file
+   template:
+     src: pgbouncer.j2
+     dest: /etc/pgbouncer/pgbouncer.ini
+     backup: yes
+   notify:
+    - restart pgbouncer

@@ -1,0 +1,6 @@
+---
+ - name: Add users
+   shell: psql -U postgres -h {{ ansible_default_ipv4.address }} -c "create user {{ item.username }} with password '{{ item.pwd }}'"
+   with_items: "{{ list_user }}"
+ - name: write userlist
+   shell: "psql -AtXF' ' -U postgres -c 'select rolname, rolpassword from pg_authid' |sed -e 's:^:\":' -e 's:$:\":' -e 's: :\" \":' -e '1,5d' > /etc/pgbouncer/userlist.txt"

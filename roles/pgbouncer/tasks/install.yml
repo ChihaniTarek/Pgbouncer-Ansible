@@ -1,0 +1,6 @@
+---
+ - name: install pgbouncer and postgresql10
+   package:
+     name:
+       - pgbouncer
+     state: present

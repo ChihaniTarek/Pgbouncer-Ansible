@@ -1,0 +1,9 @@
+---
+# tasks file for pgbouncer
+ - name: update
+   package:
+     name: "*"
+     state: latest
+ - include: tasks/install.yml
+ - include: tasks/configuration_pgbouncer.yml
+ - include: tasks/userlist.yml
