@@ -4,6 +4,8 @@ listen_port_pgbouncer: 6432
 listen_addr_pgbouncer: *
 max_connection_pgbouncer: 200
 default_pool_size: 20
+user_conn: 'user'
+pwd_conn: 'pwd'
 list_db:
     - { name: 'base1', hosts: '10.10.10.10', port: '1234', db_name: 'postgres'}
     - { name: 'base2', hosts: '10.10.10.10', port: '1234', db_name: 'postgres'}
